@@ -8,10 +8,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: TAppTheme.lightTheme,
-      home: const News(),
-      debugShowCheckedModeBanner: false, // Hide the debug banner here
+    return const GetMaterialApp(
+      home: News(),
+      debugShowCheckedModeBanner: false, 
 
     );
   }
