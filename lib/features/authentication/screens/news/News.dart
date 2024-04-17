@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:prototype/models/news/CustomSearchBar.dart';
 import 'package:prototype/models/news/NewsProduct.dart';
 import 'package:prototype/utils/constants/colors.dart';
@@ -37,9 +38,8 @@ class News extends StatelessWidget {
             child: CustomSearchBar(controller: searchController),
           ),
           const SizedBox(height: 20),
-
           Padding(
-              padding: const EdgeInsets.only(left: 25.0, top: 1.0, bottom: 10),
+            padding: const EdgeInsets.only(left: 25.0, top: 1.0, bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -49,28 +49,116 @@ class News extends StatelessWidget {
                   height: 24, // Adjust the height as needed
                 ),
                 const SizedBox(width: 5),
-                  Text('Manila City Philippines'
-                ),
-
+                Text('Manila City Philippines'),
               ],
             ),
           ),
-
-          Container(
-            padding: EdgeInsets.all(18),
-              height: 180,
-              width: 160,
-              decoration: BoxDecoration(
-                color: newsproduct[0].color,
-                borderRadius: BorderRadius.circular(10)
-              ),
-              child: Image.asset(newsproduct[0].image),
-
-          )
+          const SizedBox(height: TSizes.spaceBtwInputFields),
+          _categoriesSection()
         ],
       ),
     );
   }
+
+  Column _categoriesSection() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Text(
+          'Category',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      const SizedBox(height: 15),
+      Container(
+        height: 250.0, // Adjust height based on number of news items
+        color: Colors.white,
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          itemCount: newsproduct.length,
+          itemBuilder: (context, index) {
+            final newsItem = newsproduct[index];
+            return newsItemContainer(newsItem); // Call the news item container function
+          },
+        ),
+      ),
+    ],
+  );
+}
+
+
+  Widget newsItemContainer(NewsProduct newsProduct) {
+  // ... existing container code ...
+
+  final formattedDate = DateFormat('dd MMM yyyy').format(newsProduct.publishedAt); // Format date
+
+  return Container(
+    // ... existing container properties ...
+    child: Row(
+      // ... existing Row widget ...
+      children: [
+        // ... existing image section ...
+        const SizedBox(width: 16.0), // Spacing between image and text
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                newsProduct.title,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8.0), // Spacing between title and description
+              Text(
+                newsProduct.description,
+                maxLines: 2, // Limit description lines
+                overflow: TextOverflow.ellipsis, // Add ellipsis if text overflows
+                style: const TextStyle(fontSize: 14.0),
+              ),
+              const SizedBox(height: 4.0), // Small spacing below description
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    formattedDate, // Display formatted date
+                    style: const TextStyle(fontSize: 12.0, color: Colors.grey),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 16.0,
+                    color: Colors.grey,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget newsList() {
+  return ListView.builder(
+    shrinkWrap: true, // Prevent list view from taking unnecessary space
+    physics: const NeverScrollableScrollPhysics(), // Disable scrolling if list fits within container
+    itemCount: newsproduct.length,
+    itemBuilder: (context, index) {
+      final newsItem = newsproduct[index];
+      return newsItemContainer(newsItem);
+    },
+  );
+}
+
 
   AppBar myAppBar() {
     return AppBar(
