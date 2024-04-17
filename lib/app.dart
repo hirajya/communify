@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prototype/utils/theme/theme.dart';
-import 'package:prototype/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:prototype/features/authentication/screens/news/News.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -10,7 +10,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: TAppTheme.lightTheme,
-      home: const OnBoardingScreen(),
+      home: const News(),
+      debugShowCheckedModeBanner: false, // Hide the debug banner here
+
     );
   }
 }
