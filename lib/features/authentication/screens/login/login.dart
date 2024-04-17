@@ -40,10 +40,10 @@ class LoginScreenState extends State<LoginScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image(
+                  const Image(
                     height: 150,
                     image: AssetImage(
-                        dark ? TImages.lightAppLogo : TImages.darkAppLogo),
+                        TImages.AppLogo),
                   ),
                   Text(TTexts.loginTitle,
                       style: Theme.of(context).textTheme.headlineMedium),

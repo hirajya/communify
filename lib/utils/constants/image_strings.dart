@@ -3,8 +3,7 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo = "assets/images/logo_dark.png";
-  static const String lightAppLogo = "assets/images/logo.png";
+  static const String AppLogo = "assets\images\PLM-Hackhaton-logoArtboard-1-1.png";
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
