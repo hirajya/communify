@@ -1,14 +1,10 @@
 flutter_native_splash:
   color: "#FFFFFF"
-  color_dark: "#272727"
-  image: assets\images\logo_dark.png
-  image_dark: assets\images\logo.png
+  image: assets\images\PLM-Hackhaton-logoArtboard-1-1.png
   
   android_12:
     color: "#FFFFFF"
-    color_dark: "#272727"
-    image: assets\images\logo_dark.png
-    image_dark: assets\images\logo.png
+    image: assets\images\PLM-Hackhaton-logoArtboard-1-1.png
 
   ios: true
   web: false
