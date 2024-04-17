@@ -75,6 +75,30 @@ class SignupScreenState extends State<SignupScreen> {
                       ],
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                              labelText: TTexts.barangay,
+                              prefixIcon: Icon(Iconsax.location),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: TSizes.spaceBtwInputFields),
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                              labelText: TTexts.city,
+                              prefixIcon: Icon(Iconsax.location),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
 
                     // Username
                     TextFormField(
