@@ -41,9 +41,10 @@ class LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Image(
-                    height: 150,
+                    height: 110,
+                    width: 250,
                     image: AssetImage(
-                        TImages.AppLogo),
+                        TImages.AppLogoLandscape),
                   ),
                   Text(TTexts.loginTitle,
                       style: Theme.of(context).textTheme.headlineMedium),
