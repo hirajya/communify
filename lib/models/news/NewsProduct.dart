@@ -25,7 +25,8 @@ List<NewsProduct> newsproduct = [
       date: 'August 12, 2019 3:45pm',
       description: news1,
       image: 'assets/images/news_images/Rectangle 4.png',
-      color: Color.fromARGB(109, 118, 126, 0)),
+        color: Color(0xFFEDEDED), // Change color here
+),
   NewsProduct(
       id: 2,
       title: "Spaghetti wires are threat to safety, eyesore in Metro Manila",
@@ -33,7 +34,8 @@ List<NewsProduct> newsproduct = [
       date: 'February 28, 2019 1:43am',
       description: news2,
       image: 'assets/images/news_images/Rectangle 6.png',
-      color: Color.fromARGB(109, 118, 126, 0)),
+        color: Color(0xFFEDEDED), // Change color here
+),
 ];
 
 List<NewsProduct> newsproduct2 = [
@@ -61,4 +63,4 @@ String news1 =
     "More than 90 repairs in some of Metro Manila's major roads have been scheduled on the Eid'l Adha holiday on Monday. \nAccording to Mark Salazar's report in GMA News TV's Balitanghali, the holiday was dedicated to road repair efforts because traffic volume was light.Authorities identified 91 potholes to be asphalted. \n\nThe MMDA said that this measure would prevent road accidents and lessen traffic buildup";
 
 String news2 =
-    "The cable wires, many hanging loosely, from street posts pose as serious threats to the safety of pedestrians and residents in some parts of Metro Manila. \nIn an episode of GMA News TV's Brigada, Cesar Apolinario reported about the situation in Isla Puting Bato in Tondo, Manila where electric cable wires are obstructing the way. \n Nahihirapan po talaga 'yung mga residente namin dito dahil unang-una, syempre 'yung kasiguraduhan din ng mga nakatira dito, dahil katulad nga niyan na talagang super baba na, said Rebecca Sanchez, a purok leader in the area. \nThe wires have gone down below their original installation height after some residents tampered with these when they encounter electrical problems, she added. \nA 68-year-old carpenter living in the compound almost lost his life after the roof of the kuliglig vehicle he was riding got entangled with the drooping wires. \n Pinahinto ng driver dahil mapuputol 'yung kuryente. Kung tinuluy-tuloy niya, mapuputol 'yung kuryente, patay kami, the victim Roberto Aday said. \nOn the other hand, this danger doesn't seem to bother the residents of Barangay Damayang Lagi in Quezon City where convoluted electric cable wires also abound. \nThey casually hang their clothes on the wires.";
+    "The cable wires, many hanging loosely, from street posts pose as serious threats to the safety of pedestrians and residents in some parts of Metro Manila. \n\nIn an episode of GMA News TV's Brigada, Cesar Apolinario reported about the situation in Isla Puting Bato in Tondo, Manila where electric cable wires are obstructing the way. \n\nNahihirapan po talaga 'yung mga residente namin dito dahil unang-una, syempre 'yung kasiguraduhan din ng mga nakatira dito, dahil katulad nga niyan na talagang super baba na, said Rebecca Sanchez, a purok leader in the area. \n\nThe wires have gone down below their original installation height after some residents tampered with these when they encounter electrical problems, she added. \n\nA 68-year-old carpenter living in the compound almost lost his life after the roof of the kuliglig vehicle he was riding got entangled with the drooping wires. \n\n Pinahinto ng driver dahil mapuputol 'yung kuryente. Kung tinuluy-tuloy niya, mapuputol 'yung kuryente, patay kami, the victim Roberto Aday said. \n\nOn the other hand, this danger doesn't seem to bother the residents of Barangay Damayang Lagi in Quezon City where convoluted electric cable wires also abound. \n\nThey casually hang their clothes on the wires.";

@@ -14,75 +14,101 @@ class News extends StatelessWidget {
     final TextEditingController searchController = TextEditingController();
 
     return Scaffold(
-      appBar: myAppBar(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            child: const Padding(
-              padding: EdgeInsets.only(left: 25.0, top: 18.0, bottom: 15),
-              child: Text(
-                'Latest Problems',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: Color.fromRGBO(46, 56, 231, 1),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomSearchBar(controller: searchController),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 25.0, top: 1.0, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: Image.asset(
-                    'assets/logos/bx-compass 1.png',
-                    width: 28,
-                    height: 34,
-                  ),
-                ),
-                const SizedBox(width: 5),
-                const Text(
-                  'Manila City Philippines',
+        appBar: myAppBar(),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              child: const Padding(
+                padding: EdgeInsets.only(left: 25.0, top: 18.0, bottom: 15),
+                child: Text(
+                  'Latest Problems',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
                     fontSize: 25,
+                    fontWeight: FontWeight.w600,
                     color: Color.fromRGBO(46, 56, 231, 1),
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-          LocalNews(),
-        
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: CustomSearchBar(controller: searchController),
+            ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0, top: 1.0, bottom: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: Image.asset(
+                      'assets/logos/bx-compass 1.png',
+                      width: 28,
+                      height: 34,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                  const Text(
+                    'Manila City Philippines',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Color.fromRGBO(46, 56, 231, 1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            LocalNews(),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/news_images/home (3) 1.png',
+                width: 34,
+                height: 34,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/news_images/megaphone 1.png',
+                width: 34,
+                height: 34,
+              ),
+              label: 'Megaphone',
+            ),
 
-      ),
-       bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Color(0xFF2E38E7)), // Icon for "For Me"
-            
-            label: 'For Me',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.article), // Icon for "News"
-            label: 'News',
-          ),
-        ],
-        
-         )
-
-    );
-    
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/news_images/plus 1.png',
+                width: 44,
+                height: 44,
+              ),
+              label: 'Add',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/news_images/location (2) 1.png',
+                width: 34,
+                height: 34,
+              ),
+              label: 'Location',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/news_images/profile.png',
+                width: 34,
+                height: 34,
+              ),
+              label: 'Profile',
+            ),
+          ],
+        ));
   }
 
   // ignore: non_constant_identifier_names
@@ -106,9 +132,7 @@ class News extends StatelessWidget {
                   if (index >= 0 && index < newsproduct.length) {
                     return ItemCardLocal(
                       newsProduct: newsproduct[index],
-                      press: () {
-
-                      },
+                      press: () {},
                     );
                   } else {
                     return const SizedBox();
@@ -119,7 +143,6 @@ class News extends StatelessWidget {
           ),
         ],
       ),
-      
     );
   }
 
@@ -150,9 +173,10 @@ class News extends StatelessWidget {
             height: 40,
             child: IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                'assets/logos/search.svg',
-                color: const Color.fromARGB(255, 0, 0, 0),
+              icon: Image.asset(
+                'assets/images/news_images/notification 1.png',
+                height: 60,
+                width: 60,
               ),
             ),
           ),
@@ -211,7 +235,7 @@ class ItemCardLocal extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.3), // Shadow color
-                  blurRadius: 5, // Spread of the shadow
+                  blurRadius: 5,
                   offset: Offset(0, 2), // Offset of the shadow
                 ),
               ],
