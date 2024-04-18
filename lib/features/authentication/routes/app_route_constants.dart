@@ -15,7 +15,7 @@ class MyAppRoute {
       GoRoute(
         path: "/map",
         name: "map",
-        builder: (context, state) => const map(),
+        builder: (context, state) => map(),
         ),
       GoRoute(
         path: "/newsfeed",
