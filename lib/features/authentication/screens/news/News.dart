@@ -13,6 +13,7 @@ class News extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController searchController = TextEditingController();
 
+    int _currentIndex;
     return Scaffold(
         appBar: myAppBar(),
         body: Column(

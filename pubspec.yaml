@@ -11,11 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-<<<<<<< HEAD
-=======
   flutter_svg: ^2.0.10+1
 
->>>>>>> News_Kit
 
   # Utility Packages
   http: ^1.1.0
