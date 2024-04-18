@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/features/authentication/screens/feeds/feed.dart';
+import 'package:prototype/features/authentication/screens/news/News.dart';
 
 class map extends StatefulWidget {
   @override
@@ -167,13 +168,21 @@ class _MapScreenState extends State<map> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/images/megaphone 1.png',
-                width: 34,
-                height: 34,
-              ),
-              label: 'Megaphone',
-            ),
+            icon: GestureDetector(
+            onTap: () {
+                    Navigator.push( // Navigate to another page when image is clicked
+                      context,
+                      MaterialPageRoute(builder: (context) => News()),
+                    );
+                  },
+      child: Image.asset(
+      'assets/images/megaphone 1.png',
+      width: 34,
+      height: 34,
+    ),
+  ),
+  label: 'Megaphone',
+),
             BottomNavigationBarItem(
             icon: GestureDetector(
             onTap: () {

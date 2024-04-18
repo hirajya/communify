@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/features/authentication/screens/maps/map.dart';
+import 'package:prototype/features/authentication/screens/news/News.dart';
 
 AppBar myAppBar() {
   return AppBar(
@@ -72,30 +74,51 @@ class _FeedAppState extends State<feed> {
               ),
               label: 'Home',
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
+             BottomNavigationBarItem(
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => News()),
+                );
+              },
+              child: Image.asset(
                 'assets/images/megaphone 1.png',
-                width: 34,
-                height: 34,
+                width: 44,
+                height: 44,
               ),
-              label: 'Megaphone',
             ),
+            label: 'Megaphone',
+          ),
             BottomNavigationBarItem(
-              icon: Image.asset(
+            icon: GestureDetector(
+              onTap: () {
+                _showIssueModal(context);
+              },
+              child: Image.asset(
                 'assets/images/plus 1.png',
                 width: 44,
                 height: 44,
               ),
-              label: 'Add',
             ),
+            label: 'Add',
+          ),
             BottomNavigationBarItem(
-              icon: Image.asset(
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => map()),
+                );
+              },
+              child: Image.asset(
                 'assets/images/location (2) 1.png',
-                width: 34,
-                height: 34,
+                width: 44,
+                height: 44,
               ),
-              label: 'Location',
             ),
+            label: 'Location',
+          ),
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/user.png',
@@ -119,3 +142,64 @@ class _FeedAppState extends State<feed> {
     );
   }
 }
+void _showIssueModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Submit Issue',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 16.0),
+                GestureDetector(
+                  onTap: () {
+                    // Add functionality to select or capture a photo
+                  },
+                  child: Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.grey[300],
+                    child: Center(
+                      child: Icon(
+                        Icons.add_a_photo,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter description',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter location',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add functionality to submit the issue
+                  },
+                  child: Text('Submit'),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
