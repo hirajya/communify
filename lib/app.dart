@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: TAppTheme.lightTheme,
-      home: map(),
+      home: const OnBoardingScreen(),
     );
   }
 }

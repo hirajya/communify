@@ -56,12 +56,13 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/images/
     - assets/logos/
+    - assets/images/news_images/
+
   
 flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/images/PLM-Hackhaton-logoArtboard-1-1.png"
-    - assets/images/news_images/
     
 
 
