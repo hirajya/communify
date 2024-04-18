@@ -58,11 +58,11 @@ class TImages {
 
   // -- OnBoarding Texts
   static const String onBoardingImage1 =
-      "assets/images/on_boarding_images/taxi-1421.png";
+      "assets/images/on_boarding_images/onboarding1.gif";
   static const String onBoardingImage2 =
-      "assets/images/on_boarding_images/sammy-no-connection1.png";
+      "assets/images/on_boarding_images/onboarding2.gif";
   static const String onBoardingImage3 =
-      "assets/images/on_boarding_images/techny-searching-for-a-file-in-a-folder1.png";
+      "assets/images/on_boarding_images/onboarding3.gif";
 
   // -- Products
   static const String productImage1 = "assets/images/products/nike-shoes.png";
