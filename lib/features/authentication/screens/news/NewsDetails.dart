@@ -10,18 +10,28 @@ class NewsDeets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('News Details'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              'assets/images/news_images/Title logo.png',
+              width: 164, // Adjust width as needed
+              height: 104, // Adjust height as needed
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             onPressed: () {
+              // Handle favorite icon pressed
             },
-            icon: const Icon(Icons.favorite_border), 
+            icon: const Icon(Icons.favorite_border),
           ),
           IconButton(
             onPressed: () {
-             
+              // Handle share icon pressed
             },
-            icon: const Icon(Icons.share), 
+            icon: const Icon(Icons.share),
           ),
         ],
       ),
@@ -63,9 +73,10 @@ class NewsDeets extends StatelessWidget {
               child: Text(
                 'LATEST ISSUE IN PHILIPPINES',
                 style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF2E38E7)),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF2E38E7),
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -82,21 +93,22 @@ class NewsDeets extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1, 
+        currentIndex: 1,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Icons.person),
             label: 'For Me',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article,
-                color: Color(0xFF2E38E7)), 
+            icon: Icon(Icons.article, color: Color(0xFF2E38E7)),
             label: 'News',
           ),
         ],
         onTap: (int index) {
           if (index == 0) {
+            // Handle navigation to "For Me" screen
           } else if (index == 1) {
+            // Handle navigation to "News" screen (current screen)
           }
         },
       ),

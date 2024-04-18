@@ -25,7 +25,7 @@ List<NewsProduct> newsproduct = [
       date: 'August 12, 2019 3:45pm',
       description: news1,
       image: 'assets/images/news_images/Rectangle 4.png',
-      color: Color.fromARGB(255, 215, 216, 216)),
+      color: Color.fromARGB(109, 118, 126, 0)),
   NewsProduct(
       id: 2,
       title: "Spaghetti wires are threat to safety, eyesore in Metro Manila",
@@ -33,7 +33,7 @@ List<NewsProduct> newsproduct = [
       date: 'February 28, 2019 1:43am',
       description: news2,
       image: 'assets/images/news_images/Rectangle 6.png',
-      color: Color.fromARGB(255, 215, 216, 216)),
+      color: Color.fromARGB(109, 118, 126, 0)),
 ];
 
 List<NewsProduct> newsproduct2 = [
