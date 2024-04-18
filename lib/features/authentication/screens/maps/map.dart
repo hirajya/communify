@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/features/authentication/screens/signup/signup.dart';
+import 'package:prototype/features/authentication/screens/feeds/feed.dart';
 
 class map extends StatefulWidget {
   @override
@@ -28,6 +28,67 @@ class _MapScreenState extends State<map> {
     });
   }
 
+  void _showIssueModal(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Submit Issue',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16.0),
+              GestureDetector(
+                onTap: () {
+                  // Add functionality to select or capture a photo
+                },
+                child: Container(
+                  height: 100,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.grey[300],
+                  child: Center(
+                    child: Icon(
+                      Icons.add_a_photo,
+                      size: 40,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Enter description',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Enter location',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Add functionality to submit the issue
+                },
+                child: Text('Submit'),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,7 +112,7 @@ class _MapScreenState extends State<map> {
                   onTap: () {
                     Navigator.push( // Navigate to another page when image is clicked
                       context,
-                      MaterialPageRoute(builder: (context) => SignupScreen()),
+                      MaterialPageRoute(builder: (context) => feed()),
                     );
                   },
                   child: Image.asset(
@@ -69,6 +130,22 @@ class _MapScreenState extends State<map> {
                 child: ElevatedButton(
                   onPressed: () {
                     _toggleSmallImage(); // Toggle small image visibility
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent, // Make the button background transparent
+                  ),
+                  child: Text(''),
+                ),
+              ),
+            ),
+            Positioned(
+              left: MediaQuery.of(context).size.width * 0.6, // Adjust left position for the new button
+              top: MediaQuery.of(context).size.height * 0.4, // Adjust top position for the new button
+              child: Opacity(
+                opacity: 0.1, // Adjust opacity
+                child: ElevatedButton(
+                  onPressed: () {
+                    _showIssueModal(context); // Show the issue submission modal
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent, // Make the button background transparent
@@ -98,13 +175,18 @@ class _MapScreenState extends State<map> {
               label: 'Megaphone',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/images/plus 1.png',
-                width: 44,
-                height: 44,
-              ),
-              label: 'Add',
-            ),
+            icon: GestureDetector(
+            onTap: () {
+            _showIssueModal(context);
+          },
+            child: Image.asset(
+            'assets/images/plus 1.png',
+            width: 44,
+            height: 44,
+          ),
+        ),
+          label: 'Add',
+        ),
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/location (2) 1.png',
