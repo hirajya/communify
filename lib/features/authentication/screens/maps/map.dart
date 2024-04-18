@@ -22,6 +22,8 @@ class _MapScreenState extends State<map> {
     });
   }
 
+  
+
   void _toggleSmallImage() {
     setState(() {
       _showSmallImage = !_showSmallImage;
