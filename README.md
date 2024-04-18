@@ -1,5 +1,5 @@
 # Communify
-### Empowering Citizen - Government Feedback
+### Creating a Stronger Connection Between Citizens and Government
 
 WIth fulfilling the part of SDG Goal 9, Industry, Innovation, and Infrastructure. And SDG GOAL 11 Sustainable Cities and Communites. Introducing the one that will bridges this gap! **Communify!** It's a mobile app that empowers you to take action and improve your local environment through a feedback-forward system.  The app is designed for ease of use:
 
