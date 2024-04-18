@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:prototype/common/styles/spacing_styles.dart';
+import 'package:prototype/features/authentication/screens/maps/map.dart';
 import 'package:prototype/features/authentication/screens/signup/signup.dart';
 import 'package:prototype/utils/constants/colors.dart';
 import 'package:prototype/utils/constants/image_strings.dart';
@@ -25,6 +26,15 @@ class LoginScreenState extends State<LoginScreen> {
       obscurePassword = !obscurePassword; // Toggle the password visibility
     });
   }
+
+  void goToNextWidget(BuildContext context) {
+  // Use Navigator.pushReplacement to replace the current screen
+  // with the next widget, effectively removing the back button.
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => const map()),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +129,8 @@ class LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            goToNextWidget(context);},
                           child: const Text(TTexts.signIn),
                         ),
                       ),
