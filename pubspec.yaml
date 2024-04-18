@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   # Utility Packages
   http: ^1.1.0
   intl: ^0.18.1
