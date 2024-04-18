@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/app.dart';
+import 'package:prototype/features/authentication/routes/app_route_constants.dart';
+import 'package:prototype/features/authentication/screens/onboarding/onboarding.dart';
 
 void main() {
   runApp(const MyApp());

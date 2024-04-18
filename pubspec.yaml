@@ -21,6 +21,8 @@ dependencies:
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
+  go_router: ^13.2.4
+  flutter_launcher_icons: ^0.13.1
 
   # Icons
   iconsax: ^0.0.8
@@ -58,6 +60,11 @@ flutter:
     
 
 
+  
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/PLM-Hackhaton-logoArtboard-1-1.png"
   #--------------- LOCAL FONTS ------------------#
   fonts:
     - family: Poppins

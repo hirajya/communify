@@ -12,18 +12,18 @@ class TTexts {
 
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Empowering Citizens";
-  static const String onBoardingTitle2 = "Data-Driven Decision Making";
-  static const String onBoardingTitle3 = "Transparency and Accountability";
+  static const String onBoardingTitle1 = "Welcome to Communify PH";
+  static const String onBoardingTitle2 = "Reporting Issues Made Easy";
+  static const String onBoardingTitle3 = "Stay Informed, Make a Difference";
 
-  static const String onBoardingSubTitle1 = "You have the power to report issues and see them addressed.";
-  static const String onBoardingSubTitle2 = "Local governments get real-time data to prioritize repairs and resource allocation, leading to more effective solutions.";
-  static const String onBoardingSubTitle3 = "Both citizens and government officials have a clear view of reported issues and their resolution.";
+  static const String onBoardingSubTitle1 = "Empower Your Community, Transform Your City";
+  static const String onBoardingSubTitle2 = "Pinpoint hazards, submit issues, and make your voice heard for a safer community.";
+  static const String onBoardingSubTitle3 = "Access local news, upvote important concerns, and collaborate with your community for positive change";
 
-
-  // -- Authentication Forms
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
+  static const String barangay = "Barangay";
+  static const String city = "City";
   static const String email = "E-Mail";
   static const String password = "Password";
   static const String newPassword = "New Password";
